@@ -1,0 +1,369 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+html
+{
+	scroll-behavior: smooth;
+}
+
+nav
+{
+	width: 100%;
+	height: 80px;
+	position: fixed;
+	z-index: 12;
+	transition: 0.35s
+}
+
+.navigation_logo
+{
+	float: left;
+}
+
+.navigation_logo img
+{
+	margin: 5px;
+	height: 70px;
+	transition: 1s;
+}
+
+.navigation_logo img:hover
+{
+	animation: rubberBand; 
+	animation-duration: 1s; 
+}
+
+.wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-135deg, #434343, #000000);
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+  /* clip-path: circle(25px at calc(0% + 45px) 45px); */
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
+}
+#active:checked ~ .wrapper{
+  clip-path: circle(75%);
+}
+.menu-btn{
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  /* left: 20px; */
+  top: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  background: #666666;
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+  transition: all 0.3s ease-in-out;
+}
+#active:checked ~ .menu-btn{
+  background: #fff;
+  color: #000000;
+}
+#active:checked ~ .menu-btn i:before{
+  content: "\f00d";
+}
+.wrapper ul{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.wrapper ul li{
+  margin: 15px 0;
+}
+.wrapper ul li a{
+  color: none;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 30px;
+  color: #fff;
+  position: relative;
+  line-height: 50px;
+  transition: all 0.3s ease;
+}
+.wrapper ul li a:after{
+  position: absolute;
+  content: "";
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+.wrapper ul li a:hover:after{
+  transform: scaleY(1);
+}
+.wrapper ul li a:hover{
+  color: #000000;
+}
+input[type="checkbox"]{
+  display: none;
+}
+
+.message_position{
+	transform: translate(-50%, -50%);
+	top: 90%;
+	left: 5%;
+	position: fixed;
+}
+
+.message_position a i
+{
+	border: 2px solid #000; 
+	border-radius: 50%;
+	background-color: #666666;
+	padding: 20px;
+	color: #000;
+	transition: 0.75s
+}
+
+.message_position a i:hover{
+	transform: rotate(360deg);
+	border: 3px solid #000;
+	padding: 19px;
+	background-color: #6b6b6b;
+	color: #dbdbdb;
+}
+
+header
+{
+	width: 100%;
+	height: 100vh;
+
+}
+
+.neumorphism span
+{
+	width: 100%;
+	padding-left: 8%;
+	padding-right: 8%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 35%;
+	left: 50%;
+	font-family: 'Poppins', sans-serif;
+	font-size: 170px;
+	font-weight: 900;
+	letter-spacing: 5px;
+	color: #fff;
+	text-shadow: -8px -8px 12px rgba(255,255,255,0.4);
+	text-shadow: 8px 8px 12px rgba(0,0,0,0.1);
+	
+	caret-color: #262626;
+}
+
+.Qual_heading
+{
+	text-transform: uppercase;
+	letter-spacing: 20%;
+	font-weight: 500;
+}
+.Qual_1 h2
+{
+	text-transform: uppercase;
+	font-size: 25px;
+	letter-spacing: 2px;
+}
+
+.myskills
+{
+	position: relative;
+	width: 100%;
+}
+
+.container h2
+{
+	color: #000;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 900;
+}
+
+.container .skills
+{
+	position: relative;
+	display: flex;
+	overflow: hidden;
+	padding: 20px;
+	transition: 0.5s;
+}
+
+.container:hover .skills
+{
+	opacity: 0.05;
+}
+
+.container .skills:hover
+{
+	opacity: 1;
+	transform: scale(1.1);
+}
+
+.container .skills .name
+{
+	position: relative;
+	width: 110px;
+	text-align: right;
+	color: #000;
+	margin-top: -2px;
+	text-transform: uppercase;
+}
+
+.container .skills .value
+{
+	position: relative;
+	width: 40px;
+	text-align: left;
+	color: #000;
+	margin-top: -2px;
+	text-transform: uppercase;
+}
+
+.container .skills .percent
+{
+	position: relative;
+	width: calc(100% - 150px);
+	height: 20px;
+	margin: 0 10px;
+	border-radius: 10px;
+	background: #151515;
+	box-shadow: inset 0 0 10px #000;
+	overflow: hidden;
+}
+
+.container .skills .percent .progress
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 70%
+	height: 100%;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: inset 0 0 2px #000;
+	animation: animate 4s ease-in-out forwards;
+}
+
+.container .skills:nth-child(2) .percent .progress
+{
+	background: linear-gradient(45deg, #1fe6ff, #673AB7);
+}
+
+.myskills .skills:nth-child(3) .percent .progress
+{
+	background: linear-gradient(45deg, #3bc0ff, #33ff00);
+}
+
+.myskills .skills:nth-child(4) .percent .progress
+{
+	background: linear-gradient(45deg, #ffee54, #ff00ca);
+}
+
+.myskills .skills:nth-child(5) .percent .progress
+{
+	background: linear-gradient(45deg, #22ffde, #2196F3);
+}
+
+@keyframes animate
+{
+	from
+	{
+		width: 0;
+	}
+}
+
+.contact_heading
+{
+	text-align: center;
+}
+
+.footer
+{
+	text-align: center;
+	width: 100%;
+	height: 2%;
+	background-color: #2e2e2e;
+	color: #284a75;
+	padding-bottom: 0.9%;
+}
+
+.footer p:hover
+{
+	color: #fff;
+}
+
+.footer_hover a i:hover
+{
+	color: #fff;
+}
+
+@media (max-width: 1300px)
+{
+	.neumorphism span
+	{
+		font-size: 140px;
+	}
+}
+
+@media (max-width: 1250px)
+{
+	.neumorphism span
+	{
+		font-size: 135px;
+	}
+
+
+@media (max-width: 1200px)
+{
+	.neumorphism span
+	{
+		font-size: 120px;
+	}
+
+@media (max-width: 1040px)
+{
+	.neumorphism span
+	{
+		font-size: 110px;
+	}
+}
+
+@media (max-width: 1000px)
+{
+	.neumorphism span
+	{
+		font-size: 105px;
+	}
+}
+
+@media (max-width: 900px)
+{
+	.neumorphism span
+	{
+		font-size: 95px;
+	}
+}
+
+/*background: #000000; 
+background: -webkit-linear-gradient(to right, #434343, #000000);  
+background: linear-gradient(to right, #434343, #000000); 
+*/
